@@ -52,7 +52,7 @@ app.post('/register', (req, res) => {
   res.json(database.user[database.users.length-1]);
 })
 
-app.get('/profile/:id', (req, res)=> {
+app.get('/profile/:id', (req, res) => {
   const { id } = req.params;
   let found = false;
   database.users.forEach(users => {
