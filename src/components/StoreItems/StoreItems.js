@@ -4,7 +4,7 @@ const StoreItems = ({}) => {
 
 	return(
 		<div>
-			Store Inventory
+			<h1>Store Inventory</h1>
 		</div>
 
 		);
