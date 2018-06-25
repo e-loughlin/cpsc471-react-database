@@ -29,22 +29,39 @@ class App extends Component {
 
 
   render() {
-    return (
-      <div className="App">
+
+  	if(this.state.route === 'signin')
+  	{
+  		return(
+  			<div className="App">
+  			<div><br/><br/><br/><br/><br/><br/><Logo /><Signin onRouteChange={this.onRouteChange}/></div>
+  			</div>
+  			);
+  	}
+  	
+  	else if(this.state.route === 'home') return(
+  		  	<div className="App">
+  			<div><Navigation /><Logo /><AddItemForm onRouteChange={this.onRouteChange}/></div>
+  			</div>
+  			);
+  	
+}
+     /*else return (
+
         {this.state.route === 'signin'
-        ? <div><br/><br/><br/><br/><br/><br/><Logo /><Signin onRouteChange={this.onRouteChange}/></div>
-        : <div> 
+        ? 
+        : ( this.state.route === 'register'
+           ? <div><br/><br/><br/><br/><br/><br/><Logo /><Register onRouteChange={this.onRouteChange}/></div>
+           : <div> 
             <Navigation onRouteChange={this.onRouteChange}/>
         	<Logo />
 	        <AddItemForm 
 	        onInputChange={this.onInputChange} 
 	        onButtonSubmit={this.onButtonSubmit}/>
-       	  </div>
+       	  </div> )
     	}
 
-      </div>
-    );
-  }
+    );*/
 }
 
 export default App;

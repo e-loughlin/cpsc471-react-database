@@ -38,7 +38,7 @@ const AddItemForm = ({onInputChange, onButtonSubmit}) => {
 					        <option value="L">L</option>
 					        <option value="XL">XL</option>
 					        <option value="XXL">XXL</option>
-					    </select>
+					    </select><br/>
 					<button className='w-60 grow f4 link ph3 pv2 dib white bg-black' onClick = {onButtonSubmit}>Add Item</button>
 					<button className='w-60 grow f4 link ph3 pv2 dib white bg-black' onClick = {onButtonSubmit}>Remove Item</button>
 					<button className='w-60 grow f4 link ph3 pv2 dib white bg-black' onClick = {onButtonSubmit}>Update Item</button>
