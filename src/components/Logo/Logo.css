@@ -1,0 +1,12 @@
+.Tilt {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+
+}
+
+.center {
+	display: flex;
+	justify: center;
+
+}
