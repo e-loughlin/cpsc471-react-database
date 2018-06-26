@@ -17,19 +17,20 @@ class Signin extends React.Component{
 	}
 
 	onSubmitSignIn = (event) => {
-		event.preventDefault();
+		event.preventDefault(); //issue where page refreshes on button click, this prevents it. DO NOT REMOVE
+
 		fetch('http://localhost:3000/signin', {
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
-			body: JSON.stringify({
+			body: JSON.stringify({ //browser sends http request to server, stringify makes it readable
 				email: this.state.signInEmail,
 				password: this.state.signInPassword
 			})
 		})
 		.then(response => response.json())
 		.then(data => {
-			if(data == 'success'){
-				this.props.onRouteChange('home');
+			if(data == 'success'){ //'success' is sent by server if email and password match.
+				this.props.onRouteChange('home'); //launches the home page from a successful sign in
 			}
 		})
 
