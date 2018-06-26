@@ -19,7 +19,15 @@ import RequisitionHistory from './components/Requisitions/RequisitionHistory';
 import EventNew from './components/Events/EventNew';
 import EventRegister from './components/Events/EventRegister';
 
-
+var knex = require('knex')({
+  client: 'mysql',
+  connection: {
+    host : '127.0.0.1',
+    user : 'postgres',
+    password : 'potato',
+    database : 'ProjectACKU'
+  }
+});
 
 
 class App extends Component {
@@ -30,7 +38,7 @@ class App extends Component {
 			route: 'signin',
       imageURL: '',
       box: {},
-      isSignedIn: false
+      isSignedIn: true
 		}
 	}
 	onInputChange = (event) => {

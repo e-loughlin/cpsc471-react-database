@@ -9,37 +9,35 @@ class Signin extends React.Component{
 		}
 	}
 
-	let loginUser = "";
-	onEmailChange = (event) => {
-		this.setState({signInEmail: event.target.value})
-	}
+	// onEmailChange = (event) => {
+	// 	//this.setState({signInEmail: event.target.value})
+	// }
 
-	onPasswordChange = (event) => {
-		this.setState({signInPassword: event.target.value})
-	}
+	// onPasswordChange = (event) => {
+	// 	//this.setState({signInPassword: event.target.value})
+	// }
 
-	onSubmitSignIn = (event) => {
-		event.preventDefault(); //issue where page refreshes on button click, this prevents it. DO NOT REMOVE
+	// onSubmitSignIn = (event) => {
+	// 	event.preventDefault(); //issue where page refreshes on button click, this prevents it. DO NOT REMOVE
 
-		fetch('http://localhost:3000/signin', {
-			method: 'post',
-			headers: {'Content-Type': 'application/json'},
-			body: JSON.stringify({ //browser sends http request to server, stringify makes it readable
-				email: this.state.signInEmail,
-				password: this.state.signInPassword
-			})
-		})
-		.then(response => response.json())
-		.then(data => {
-			data = loginUser;
-			console.log(data);
-			if ((this.state.isSigned){
-				this.props.loadUser(user);
-				this.props.onRouteChange('home'); //launches the home page from a successful sign in
+	// 	// fetch('http://localhost:3000/signin', {
+	// 	// 	method: 'post',
+	// 	// 	headers: {'Content-Type': 'application/json'},
+	// 	// 	body: JSON.stringify({ //browser sends http request to server, stringify makes it readable
+	// 	// 		email: this.state.signInEmail,
+	// 	// 		password: this.state.signInPassword
+	// 	// 	})
+	// 	// })
+	// 	// .then(response => response.json())
+	// 	// .then(data => {
+	// 	// 	data = loginUser;
+	// 	// 	console.log(data);
+	// 	// 	if ((this.state.isSigned){
+	// 	// 		this.props.loadUser(user);
+	// 	// 		this.props.onRouteChange('home'); //launches the home page from a successful sign in
 
-			}
-		})
-	}
+	// 		}
+	
 
 	render(){
 		const { onRouteChange } = this.props;
@@ -74,7 +72,7 @@ class Signin extends React.Component{
       <input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
 			type="submit"
 			value="Sign in"
-			onClick={this.onSubmitSignIn} />
+			onClick={() => onRouteChange('home')} />
 
     </div>
     <div className="lh-copy mt3">
@@ -86,7 +84,8 @@ class Signin extends React.Component{
 </article>
 );
 }
-
 }
+
+
 
 export default Signin;
