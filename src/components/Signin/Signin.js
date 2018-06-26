@@ -16,7 +16,8 @@ class Signin extends React.Component{
 		this.setState({signInPassword: event.target.value})
 	}
 
-	onSubmitSignIn = () => {
+	onSubmitSignIn = (event) => {
+		event.preventDefault();
 		fetch('http://localhost:3000/signin', {
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
@@ -25,7 +26,14 @@ class Signin extends React.Component{
 				password: this.state.signInPassword
 			})
 		})
-		this.props.onRouteChange('home');
+		.then(response => response.json())
+		.then(data => {
+			if(data == 'success'){
+				this.props.onRouteChange('home');
+			}
+		})
+
+
 	}
 
 	render(){
@@ -58,7 +66,10 @@ class Signin extends React.Component{
       </div>
     </fieldset>
     <div className="">
-      <input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" type="submit" value="Sign in" onClick={this.onSubmitSignIn} />
+      <input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
+			type="submit"
+			value="Sign in"
+			onClick={this.onSubmitSignIn} />
 
     </div>
     <div className="lh-copy mt3">
