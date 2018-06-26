@@ -19,16 +19,6 @@ import RequisitionHistory from './components/Requisitions/RequisitionHistory';
 import EventNew from './components/Events/EventNew';
 import EventRegister from './components/Events/EventRegister';
 
-var knex = require('knex')({
-  client: 'mysql',
-  connection: {
-    host : '127.0.0.1',
-    user : 'postgres',
-    password : 'potato',
-    database : 'ProjectACKU'
-  }
-});
-
 
 class App extends Component {
 	constructor() {
@@ -41,9 +31,9 @@ class App extends Component {
       isSignedIn: true
 		}
 	}
-	onInputChange = (event) => {
-		console.log(event.target.value);
-	}
+	// onInputChange = (event) => {
+	// 	console.log(event.target.value);
+	// }
 
 	onButtonSubmit = () => {
 		console.log('click');
@@ -59,6 +49,7 @@ class App extends Component {
     this.setState({route: 'register'});
   else
     this.setState({route: 'signin'});
+
 	}
 
 
@@ -82,7 +73,7 @@ class App extends Component {
             <article className="br3 ba dark-gray b--black-10 mv6 shadow-5 w-800 w-800-m w-800-l mw7 center">
 			<main className="pa4 black-800">
 			<p><strong>Welcome to the All Canadian Karate Union - Requisition Submission Form! :) </strong></p>
-            <img src={blackbelts} width="80%" />
+            <img alt="Welcome to ACKU" src={blackbelts} width="80%" />
 			</main>
 			</article>
 

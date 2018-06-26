@@ -3,10 +3,12 @@ import './AddItemForm.css';
 
 const AddItemForm = ({onInputChange, onButtonSubmit}) => {
 
+
+
 	return(
 		<div>
 			<p className='f3'>
-			{'Add/Remove/Update Store Items'}
+			'<h1>Add/Remove/Update Store Items</h1>'
 			</p>
 			<div className='center'>
 				<div className='form pa4 br3 shadow-5'>
@@ -45,8 +47,17 @@ const AddItemForm = ({onInputChange, onButtonSubmit}) => {
 				</div>
 			</div>
 
+			<div>
+			<h2>Add Item: INSERT INTO store_item (item_id, price, instructor_bonus, item_type, size) VALUES (field1, field2, field3, field4, field5)</h2>
+			</div>
 
+			<div>
+			<h2>Remove Item: DELETE FROM store_item WHERE (item_id = field1)</h2>
+			</div>
 
+			<div>
+			<h2>Edit Item: UPDATE store_item SET item_id=field1, price=field2, instructor_bonus=field3, item_type=field4, size=field5 WHERE item_id=field1</h2>
+			</div>
 
 		</div>
 		);
