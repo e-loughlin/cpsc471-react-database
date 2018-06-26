@@ -1,0 +1,61 @@
+CREATE TABLE members(username text PRIMARY KEY, password text, first_name text, last_name text, address text, phone_number text, email text);
+
+CREATE TABLE dojo(dojo_name text PRIMARY KEY, dojo_address text, club_animal text);
+
+CREATE TABLE event(event_id text PRIMARY KEY, location text, time time, date date, event_type text);
+
+CREATE TABLE store_item (item_id text PRIMARY KEY, size text, instructor_bonus real, item_type text, price real);
+
+CREATE TABLE admin (admin_username text PRIMARY KEY REFERENCES members(username));
+
+CREATE TABLE instructor(instructor_username text PRIMARY KEY REFERENCES members(username), dojo text REFERENCES dojo(dojo_name));
+
+CREATE TABLE student (student_username text PRIMARY KEY REFERENCES members(username), instructor text REFERENCES instructor(instructor_username));
+
+
+INSERT INTO 
+
+
+
+CREATE TABLE store_item (item_id text PRIMARY KEY, size text, instructor_bonus real, item_type text, price real);
+
+CREATE TABLE requisition(requisition_id text PRIMARY KEY, order_id text, instructor_username text REFERENCES members(username), requisition_status text);
+
+CREATE TABLE event_registration (participant_username text REFERENCES members(username), event_id text REFERENCES event(event_id));
+
+CREATE TABLE equip_orders (order_id text PRIMARY KEY, buyer_username text REFERENCES members(username), item_id text REFERENCES store_item(item_id), instructor_username text REFERENCES members(username), order_status text);
+
+
+INSERT INTO table (column) VALUES
+(values),
+
+
+
+
+
+
+
+INSERT INTO dojo (dojo_name, dojo_address, club_animal) VALUES
+('dojo1', '234 Dojo ave', 'dog'),
+('dojo2', '456 Dojo ave', 'cat'),
+('dojo3', '789 Dojo ave', 'moose');
+
+INSERT INTO members (username, password, first_name, last_name, address,phone_number,email) VALUES
+('student1', 'studentpass', 'George', 'Ldd', '123 student ave', '1231231233', 'george@student.com'),
+('instructor1', 'instructorpass', 'Paul', 'Ine', '123 instructor ave', '4832938271', 'paul@instructor.com'), 
+('admin1', 'adminpass', 'Kev', 'ins', '123 admin ave', '1232343456', 'kev@admin.com');
+
+INSERT INTO admin(admin_username) VALUES
+('admin1');
+
+INSERT INTO instructor(instructor_username, dojo) VALUES
+('instructor1', 'dojo1');
+
+INSERT INTO student(student_username, instructor) VALUES
+('student1','instructor1');
+
+
+
+
+
+
