@@ -9,9 +9,11 @@ class Signin extends React.Component{
 		}
 	}
 
+	let loginUser = "";
 	onEmailChange = (event) => {
 		this.setState({signInEmail: event.target.value})
 	}
+
 	onPasswordChange = (event) => {
 		this.setState({signInPassword: event.target.value})
 	}
@@ -29,12 +31,14 @@ class Signin extends React.Component{
 		})
 		.then(response => response.json())
 		.then(data => {
-			if(data == 'success'){ //'success' is sent by server if email and password match.
+			data = loginUser;
+			console.log(data);
+			if ((this.state.isSigned){
+				this.props.loadUser(user);
 				this.props.onRouteChange('home'); //launches the home page from a successful sign in
+
 			}
 		})
-
-
 	}
 
 	render(){
