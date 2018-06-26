@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EventRegister = ({}) => {
+const EventRegister = ({onRouteChange}) => {
 
 	return(
 		<div>
