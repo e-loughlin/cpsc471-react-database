@@ -42,7 +42,7 @@ class Signin extends React.Component{
 		return(
 		<article className="br3 ba dark-gray b--black-10 mv6 shadow-5 w-100 w-50-m w-25-l mw5 center" id="mainSignin">
 	<main className="pa4 black-80">
-  <form className="measure" id="signinForm">
+  <div className="measure" id="signinForm">
     <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
       <legend className="f4 fw6 ph0 mh0">Sign In</legend>
       <div className="mt3">
@@ -77,7 +77,7 @@ class Signin extends React.Component{
       <p onClick={() => onRouteChange('register')} className="f6 link dim black pointer">Register</p>
 
     </div>
-  </form>
+  </div>
 </main>
 </article>
 );
