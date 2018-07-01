@@ -42,6 +42,7 @@ class Signin extends React.Component{
 	render(){
 		const { onRouteChange } = this.props;
 		return(
+			<div>
 		<article className="br3 ba dark-gray b--black-10 mv6 shadow-5 w-100 w-50-m w-25-l mw5 center" id="mainSignin">
 	<main className="pa4 black-80">
   <div className="measure" id="signinForm">
@@ -79,9 +80,28 @@ class Signin extends React.Component{
       <p onClick={() => onRouteChange('register')} className="f6 link dim black pointer">Register</p>
 
     </div>
+
   </div>
+
+
 </main>
+
+
 </article>
+
+    <div>
+    	<h2>To sign in: field1 = username, field2 = password</h2>
+    </div>
+
+     <div>
+    	<h2>SELECT COUNT(username) FROM members WHERE username=field1 AND password=field2;</h2>
+    </div>
+
+     <div>
+    	<h2>If the above query is 1, then the password is matching. THus Allow sign-in.</h2>
+    </div>
+
+    </div>
 );
 }
 }
